@@ -1,14 +1,14 @@
 import { Box, Grid, GridItem } from '@chakra-ui/react';
 import Header from '../components/Header';
 import { prisma } from '../lib/prisma';
-import { GetStaticProps } from 'next';
+import { GetServerSideProps, GetStaticProps } from 'next';
 import Feedback, { FeedbackProps } from '../components/Feedback';
 import { useSession } from 'next-auth/react';
 import Login from '../components/Login';
 import FeedbackForm from '../components/FeedbackForm';
 
 // index.tsx
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const feed = await prisma.feedback.findMany({
     include: {
       user: {
@@ -39,6 +39,7 @@ const Home: React.FC<Props> = (props) => {
   return (
     <>
       <Header />
+      {console.log(props)}
       {session ? (
         session.user?.email === 'jeswanthv001@gmail.com' ? (
           dashboard
