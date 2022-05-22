@@ -29,7 +29,7 @@ export default function FeedbackForm() {
     } catch (error) {
       console.error(error);
     }
-    Router.reload();
+    // Router.reload();
   };
   return (
     <Flex align='center' justify='center' id='contact'>
