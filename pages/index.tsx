@@ -1,10 +1,6 @@
-import {
-  Box,
-  Grid,
-  GridItem,
-} from '@chakra-ui/react';
+import { Box, Grid, GridItem } from '@chakra-ui/react';
 import Header from '../components/Header';
-import prisma from '../lib/prisma';
+import { prisma } from '../lib/prisma';
 import { GetStaticProps } from 'next';
 import Feedback, { FeedbackProps } from '../components/Feedback';
 import { useSession } from 'next-auth/react';
