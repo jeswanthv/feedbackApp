@@ -20,7 +20,7 @@ const LoggedInContent = () => {
         cursor={'pointer'}
         minW={0}
       >
-        <Avatar size={'sm'} src={session?.user?.image} />
+        <Avatar size={'sm'} src={session?.user?.image!} />
       </MenuButton>
       <MenuList>
         <Text m={2}>{session?.user?.email}</Text>

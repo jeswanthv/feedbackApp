@@ -14,7 +14,7 @@ export default async function handle(req, res) {
     data: {
       title: title,
       content: content,
-      user: { connect: { email: session?.user?.email } },
+      user: { connect: { email: session?.user?.email! } },
     },
   });
   res.json(result);
